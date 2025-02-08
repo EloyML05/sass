@@ -1,4 +1,5 @@
 @use 'variables' as vars;
+@use 'sass:math';
 body {
 font-family: vars.$font-family-base;
 font-size: vars.$font-size-base;
@@ -27,7 +28,7 @@ padding-left: vars.$spacing-unit * 2;
 margin: vars.$spacing-unit 0;
 }
 li {
-margin-bottom: vars.$spacing-unit / 2;
+margin-bottom:math.div(vars.$spacing-unit, 2);
 }
 /* Paddings & margins */
 $sizes: (
