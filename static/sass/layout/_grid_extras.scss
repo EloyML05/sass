@@ -1,0 +1,12 @@
+@use '../base/variables' as vars;
+
+@each $breakpoint, $size in vars.$breakpoints {
+  @media (min-width: $size) {
+    @for $i from 1 through vars.$grid-columns {
+      .col-#{$breakpoint}-#{$i} {
+        flex: 0 0 percentage($i / vars.$grid-columns);
+        max-width: percentage($i / vars.$grid-columns);
+      }
+    }
+  }
+}
