@@ -10,3 +10,16 @@
     }
   }
 }
+
+@each $breakpoint, $size in vars.$breakpoints {
+    @media (min-width: $size) {
+      @each $num, $gutter in vars.$gutters {
+        .gx-#{$breakpoint}-#{$num} {
+          column-gap: $gutter;
+        }
+        .gy-#{$breakpoint}-#{$num} {
+          row-gap: $gutter;
+        }
+      }
+    }
+  }
